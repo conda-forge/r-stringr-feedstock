@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/stringr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/stringr/stringr_{{ version }}.tar.gz
-  sha256: 87604d2d3a9ad8fd68444ce0865b59e2ffbdb548a38d6634796bbd83eeb931dd
+  sha256: ec0d8e90caa3e107f18c188ed313dea8bfd12a738011b0be09ef5362360ddcb1
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -46,13 +46,10 @@ test:
 about:
   home: http://stringr.tidyverse.org, https://github.com/tidyverse/stringr
   license: GPL-2
-  summary: A consistent, simple and easy to use set of wrappers around the fantastic 'stringi'
-    package. All function and argument names (and positions) are consistent, all functions
-    deal with "NA"'s and zero length vectors in the same way, and the output from one
-    function is easy to feed into the input of another.
+  summary: A consistent, simple and easy to use set of wrappers around the fantastic 'stringi' package. All function and argument names (and positions) are consistent, all functions deal with "NA"'s and zero length vectors in the same way, and the output from one function is easy to feed into the input of another.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2  # [unix]
+  license_file: {{ environ["PREFIX"] }}\R\share\licenses\GPL-2  # [win]
 
 extra:
   recipe-maintainers:
