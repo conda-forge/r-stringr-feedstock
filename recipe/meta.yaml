@@ -28,7 +28,7 @@ requirements:
 
   host:
     - r-base
-    - cli
+    - r-cli
     - r-glue >=1.6.1
     - r-lifecycle >=1.0.3
     - r-magrittr
@@ -38,7 +38,7 @@ requirements:
 
   run:
     - r-base
-    - cli
+    - r-cli
     - r-glue >=1.6.1
     - r-lifecycle >=1.0.3
     - r-magrittr
