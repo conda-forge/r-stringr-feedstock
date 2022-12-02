@@ -1,13 +1,15 @@
 About r-stringr
 ===============
 
-Home: http://stringr.tidyverse.org, https://github.com/tidyverse/stringr
+Home: https://stringr.tidyverse.org
 
-Package license: GPL-2
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-stringr-feedstock/blob/main/LICENSE.txt)
 
 Summary: A consistent, simple and easy to use set of wrappers around the fantastic 'stringi' package. All function and argument names (and positions) are consistent, all functions deal with "NA"'s and zero length vectors in the same way, and the output from one function is easy to feed into the input of another.
+
+Development: https://github.com/tidyverse/stringr
 
 Current build status
 ====================
