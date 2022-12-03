@@ -1,4 +1,4 @@
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/stringr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/stringr/stringr_{{ version }}.tar.gz
-  sha256: ec0d8e90caa3e107f18c188ed313dea8bfd12a738011b0be09ef5362360ddcb1
+  sha256: 52b159d7700a139111b4caf939e7c9c6ab3e01185181400d70a74c552826633a
 
 build:
   noarch: generic
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
 
   rpaths:
     - lib/R/lib/
@@ -28,15 +28,23 @@ requirements:
 
   host:
     - r-base
-    - r-glue >=1.2.0
+    - r-cli
+    - r-glue >=1.6.1
+    - r-lifecycle >=1.0.3
     - r-magrittr
-    - r-stringi >=1.1.7
+    - r-rlang >=1.0.0
+    - r-stringi >=1.5.3
+    - r-vctrs
 
   run:
     - r-base
-    - r-glue >=1.2.0
+    - r-cli
+    - r-glue >=1.6.1
+    - r-lifecycle >=1.0.3
     - r-magrittr
-    - r-stringi >=1.1.7
+    - r-rlang >=1.0.0
+    - r-stringi >=1.5.3
+    - r-vctrs
 
 test:
   commands:
@@ -44,12 +52,14 @@ test:
     - "\"%R%\" -e \"library('stringr')\""  # [win]
 
 about:
-  home: http://stringr.tidyverse.org, https://github.com/tidyverse/stringr
-  license: GPL-2
+  home: https://stringr.tidyverse.org
+  dev_url: https://github.com/tidyverse/stringr
+  license: MIT
   summary: A consistent, simple and easy to use set of wrappers around the fantastic 'stringi' package. All function and argument names (and positions) are consistent, all functions deal with "NA"'s and zero length vectors in the same way, and the output from one function is easy to feed into the input of another.
-  license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2  # [unix]
-  license_file: {{ environ["PREFIX"] }}\R\share\licenses\GPL-2  # [win]
+  license_family: MIT
+  license_file: 
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
