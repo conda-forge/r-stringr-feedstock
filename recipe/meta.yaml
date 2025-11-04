@@ -1,4 +1,4 @@
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/stringr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/stringr/stringr_{{ version }}.tar.gz
-  sha256: d410ecb4f19c3fd07bb32142d5d0286e2f19f1533ba86243776326a4e73837a3
+  sha256: 24f2fc5df980a7eb888659e22b9744d2316c558624015c7a7cd8c3ce3e370064
 
 build:
   noarch: generic
-  number: 1
+  number: 0
 
   rpaths:
     - lib/R/lib/
